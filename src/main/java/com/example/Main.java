@@ -33,6 +33,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @SpringBootApplication
@@ -52,6 +56,16 @@ public class Main {
   String index() {
     return "index";
   }
+  
+  @RequestMapping("/hello")
+  String hello() {
+    return "This is the second exam";
+  }
+  
+  @RequestMapping("/cuadrado")
+    public int cuadrado(@RequestParam("valor") int valor) {
+        return valor*valor;
+    }
 
   @RequestMapping("/db")
   String db(Map<String, Object> model) {
