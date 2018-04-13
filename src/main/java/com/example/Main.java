@@ -36,6 +36,7 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -63,8 +64,8 @@ public class Main {
   }
   
   @RequestMapping("/cuadrado")
-    public int cuadrado(@RequestParam("valor") int valor) {
-        return valor*valor;
+    public ResponseEntity<?> cuadrado(@RequestParam("valor") int valor) {
+        return new ResponseEntity<>(valor*valor, HttpStatus.ACCEPTED);
     }
 
   @RequestMapping("/db")
