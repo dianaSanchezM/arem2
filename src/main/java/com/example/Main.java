@@ -59,8 +59,8 @@ public class Main {
   }
   
   @RequestMapping("/hello")
-  String hello() {
-    return "This is the second exam";
+  ResponseEntity<?> hello() {
+    return new ResponseEntity<>("This is the second exam", HttpStatus.ACCEPTED);
   }
   
   @RequestMapping("/cuadrado")
