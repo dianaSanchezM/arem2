@@ -25,7 +25,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -65,7 +64,8 @@ public class Main {
   
   @RequestMapping("/cuadrado")
     public ResponseEntity<?> cuadrado(@RequestParam("valor") int valor) {
-        return new ResponseEntity<>(valor*valor, HttpStatus.ACCEPTED);
+        String json = "{valor :"+String.valueOf(valor)+", cuadrado : "+String.valueOf(valor*valor)+"}";
+        return new ResponseEntity<>(json, HttpStatus.ACCEPTED);
     }
 
   @RequestMapping("/db")
