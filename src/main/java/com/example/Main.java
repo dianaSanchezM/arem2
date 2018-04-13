@@ -64,8 +64,8 @@ public class Main {
   
   @RequestMapping("/cuadrado")
     public ResponseEntity<?> cuadrado(@RequestParam("valor") int valor) {
-        String json = "{valor :"+String.valueOf(valor)+", cuadrado : "+String.valueOf(valor*valor)+"}";
-        return new ResponseEntity<>(json, HttpStatus.ACCEPTED);
+        /String json = "{valor :"+String.valueOf(valor)+", cuadrado : "+String.valueOf(valor*valor)+"}";
+        return new ResponseEntity<>("59", HttpStatus.ACCEPTED);
     }
 
   @RequestMapping("/db")
